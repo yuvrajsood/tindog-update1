@@ -1,0 +1,397 @@
+.category {
+    font-family: "Poppins", sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 20px;
+    background: rgb(255, 255, 255);
+}
+
+.category {
+    font-size: 6em;
+    font-weight: 500;
+    color: rgb(0, 0, 0);
+    letter-spacing: 5px;
+    cursor: pointer;
+    text-transform: uppercase;
+    transition: 0.5s;
+}
+
+.category:hover {
+    color: #e66465;
+    text-shadow: 0 0 5px #9198e5, 0 0 25px #9198e5, 0 0 50px #9198e5, 0 0 100px #9198e5;
+}
+
+@import url(https://fonts.googleapis.com/css?family=Lato:300,900);
+*,
+ :after,
+ :before {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    font-family: "Lato" sans-serif;
+    background: #eee;
+    padding: 100px 60px;
+    animation: fade-in 3s eease-in-out forwards;
+}
+
+strong {
+    font-weight: 900;
+}
+
+.canvas-wrapper {
+    display: flex;
+    height: 75%;
+    align-items: center;
+    justify-content: center;
+}
+
+.canvas-wrapper .canvas+.canvas {
+    margin-left: 40px;
+}
+
+.canvas {
+    position: relative;
+    display: block;
+    width: 400px;
+    height: 400px;
+    padding: 20px;
+    color: inherit;
+    text-decoration: none;
+}
+
+.canvas_border {
+    position: absolute;
+    z-index: 0;
+    top: 40px;
+    left: -40px;
+    height: 100%;
+    width: 100%;
+}
+
+.canvas_border svg {
+    height: 100%;
+    width: 100%;
+}
+
+.rect-gradient {
+    stroke-dasharray: 2000;
+    stroke-dashoffset: 2000;
+    animation: erase-line 1s ease-in-out forwards;
+}
+
+.canvas_img {
+    transform: scale3d(0.9, 0.9, 0.9);
+    opacity: 0.3;
+    max-width: 200%;
+    max-height: 200%;
+}
+
+.canvas_img-wrapper {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    transform: rotate(-10deg) skew(-10deg);
+    overflow: hidden;
+    background: white;
+}
+
+.canvas_copy {
+    position: absolute;
+    bottom: 0;
+    left: -25%;
+    text-transform: uppercase;
+    color: #dac527;
+    z-index: 100;
+}
+
+.canvas_copy_title {
+    font-size: 62px;
+    display: block;
+    transform: translateX(-80px);
+    color: black;
+    transition: all 0.75s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.canvas_copy_title:nth-child(1) {
+    transition-delay: 0.1s;
+}
+
+.canvas_copy_title:nth-child(2) {
+    transition-delay: 0.2s;
+}
+
+.canvas_copy_subtitle {
+    display: block;
+    transform: rotate(270deg) translateY(-100%) translateX(calc(-100%-80px));
+    transform-origin: top left;
+    position: absolute;
+    left: 0;
+    top: 8px;
+    font-size: 24px;
+    font-weight: 900;
+    transition: all 0.75s cubic-bezier(0.68, -0.55, 0.265, 1.55) 0.35s;
+}
+
+.canvas_copy_details {
+    display: block;
+    transition: all 0.75s cubic-bezier(0.68, -0.55, 0.265, 1.55) 0.14s;
+    transform: translateX(-80px);
+}
+
+.canvas_border,
+.canvas_img-wrapper,
+.canvas_img {
+    transition: all 0.25s ease-in-out 0s;
+}
+
+.canvas_border,
+.canvas_img-wrapper {
+    transform: rotate(-10deg) skew(-10deg);
+}
+
+.canvas_copy_title,
+.canvas_copy_subtitle,
+.canvas_copy_details {
+    opacity: 0;
+}
+
+.canvas:hover .canvas_copy_title,
+.canvas:hover .canvas_copy_subtitle,
+.canvas:hover .canvas_copy_details,
+.canvas:hover .canvas_img {
+    opacity: 1;
+}
+
+.canvas:hover .canvas_border,
+.canvas:hover .canvas_img-wrapper {
+    transform: rotate(-14deg) skew(-14deg) scale(0.96);
+}
+
+.canvas:hover .canvas_img {
+    transform: scale3d(1, 1, 1);
+}
+
+.canvas:hover .canvas_copy_title,
+.canvas:hover .canvas_copy_details {
+    transform: translateX(0);
+}
+
+.canvas:hover .canvas_copy_subtitle {
+    transform: rotate(270deg) translateY(-100px) translateX(-100%);
+}
+
+.canvas:hover .rect-gradient {
+    animation: draw-line 3s cubic-bezier(0.19, 1, 0.22, 1) forwards;
+}
+
+@keyframes draw-line {
+    from {
+        stroke-dashoffset: 2000;
+    }
+    to {
+        stroke-dashoffset: 0;
+    }
+}
+
+@keyframes erase-Line {
+    from {
+        stroke-dashoffset: 0;
+    }
+    to {
+        stroke-dashoffset: 2000;
+    }
+}
+
+@keyframes fade-in {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.img1 {
+    clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+    transition: 0.3s;
+    display: block;
+    margin: 40px auto;
+}
+
+.img1:hover {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+}
+
+header .carousel-inner .item {
+    height: 100vh;
+}
+
+header .carousel-inner .item img {
+    width: 100%;
+}
+
+.carousel-caption {
+    padding-bottom: 150px;
+}
+
+.carousel-caption h2 {
+    font-size: 50px;
+    text-transform: uppercase;
+}
+
+.carousel-control.right {
+    background-image: none;
+}
+
+.carousel-control.left {
+    background-image: none;
+}
+
+
+/* ignore the code below */
+
+.link-area {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    padding: 15px;
+    border-radius: 40px;
+    background: tomato;
+}
+
+.link-area a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 25px;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: white;
+    padding-bottom: 100px;
+}
+
+@media screen and (max-width: 410px) {
+    .send-button {
+        width: 99%;
+    }
+}
+
+
+/* Importing the Roboto font from Google Fonts. */
+
+@import url("https://fonts.googleapis.com/css?family=Roboto:400");
+
+/* Set font of all elements to 'Roboto' */
+
+* {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+}
+
+
+/* Remove outline of all elements on focus */
+
+*:focus {
+    outline: 0;
+}
+
+h3 {
+    text-align: center;
+}
+
+
+/* Add styles to 'container' class */
+
+.container {
+    padding: 12px 24px 24px 24px;
+    margin: 48px 12px;
+    background: #E3F2FD;
+    border-radius: 4px;
+}
+
+
+/* Add styles to 'label' selector */
+
+label {
+    font-size: 0.85em;
+    margin-left: 12px;
+}
+
+
+/* Add styles to 'input' and 'textarea' selectors */
+
+input[type=text],
+input[type=email],
+textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-top: 6px;
+    margin-bottom: 16px;
+    resize: vertical;
+}
+
+
+/* Add styles to show 'focus' of selector */
+
+input[type=text]:focus,
+input[type=email]:focus,
+textarea:focus {
+    border: 1px solid green;
+}
+
+
+/* Add styles to the submit button */
+
+input[type=submit],
+input[type=reset] {
+    background: #64B5F6;
+    margin: 0 auto;
+    outline: 0;
+    color: white;
+    border: 0;
+    padding: 12px 24px;
+    border-radius: 4px;
+    transition: all ease-in-out 0.1s;
+    position: relative;
+    display: inline-block;
+    text-align: center;
+}
+
+
+/* Add styles for 'focus' property */
+
+input[type=submit]:focus {
+    background: #A5D6A7;
+    color: whitesmoke;
+}
+
+
+/* Style 'hover' property */
+
+input[type=submit]:hover {
+    background: #2196F3;
+}
+
+
+/* Align items to center of the 'div' with the class 'center' */
+
+.center {
+    text-align: center;
+}
